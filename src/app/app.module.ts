@@ -7,7 +7,13 @@ import { AppComponent } from './app.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import {EventComponent} from './components/event/event.component'
+import {EventComponent} from './components/event/event.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'
+
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+import { FirebaseService } from './services/firebase.service';
+import { AngularFireModule } from '@angular/fire';
 
 @NgModule({
   declarations: [
@@ -19,9 +25,12 @@ import {EventComponent} from './components/event/event.component'
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent],
   schemas: [ NO_ERRORS_SCHEMA ]
 })

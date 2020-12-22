@@ -1,27 +1,31 @@
 {
-  "name": "agenda",
-  "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "pwa": "ng build --prod && cd dist && http-server -p 8080 && cd .."
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.0.3",
-    "@angular/cdk": "^11.0.1",
+    "@angular/cdk": "^11.0.3",
     "@angular/common": "~11.0.3",
     "@angular/compiler": "~11.0.3",
     "@angular/core": "~11.0.3",
+    "@angular/fire": "^5.4.2",
     "@angular/forms": "~11.0.3",
-    "@angular/material": "^11.0.1",
+    "@angular/material": "^11.0.3",
     "@angular/platform-browser": "~11.0.3",
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
+    "@angular/service-worker": "^11.0.5",
     "angular-bootstrap-md": "^10.1.1",
+    "firebase": "^8.2.1",
+    "idb": "^5.0.8",
+    "netlify-cli": "^2.69.11",
     "rxjs": "~6.6.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.10.3"
